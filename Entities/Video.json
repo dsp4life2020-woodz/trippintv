@@ -1,0 +1,69 @@
+{
+  "name": "Video",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Video title"
+    },
+    "description": {
+      "type": "string",
+      "description": "Video description"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "road_rage",
+        "public_freakout",
+        "customer_service",
+        "neighbor_drama",
+        "family_drama",
+        "workplace_chaos",
+        "random_meltdown",
+        "other"
+      ],
+      "description": "Type of trippin' moment"
+    },
+    "video_url": {
+      "type": "string",
+      "description": "Video file URL"
+    },
+    "thumbnail_url": {
+      "type": "string",
+      "description": "Video thumbnail URL"
+    },
+    "trip_count": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of trips (likes) received"
+    },
+    "view_count": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of views"
+    },
+    "user_email": {
+      "type": "string",
+      "description": "Email of user who posted"
+    },
+    "user_name": {
+      "type": "string",
+      "description": "Name of user who posted"
+    },
+    "is_contest_eligible": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether video can participate in weekly contests"
+    }
+  },
+  "required": [
+    "title",
+    "user_email",
+    "user_name"
+  ],
+  "rls": {
+    "write": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

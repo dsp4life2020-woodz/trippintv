@@ -1,0 +1,47 @@
+{
+  "name": "Contest",
+  "type": "object",
+  "properties": {
+    "week_number": {
+      "type": "number",
+      "description": "Week number of the year"
+    },
+    "year": {
+      "type": "number",
+      "description": "Contest year"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Contest start date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Contest end date"
+    },
+    "winner_video_id": {
+      "type": "string",
+      "description": "ID of winning video"
+    },
+    "winner_user_email": {
+      "type": "string",
+      "description": "Email of contest winner"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether contest is currently active"
+    }
+  },
+  "required": [
+    "week_number",
+    "year",
+    "start_date",
+    "end_date"
+  ],
+  "rls": {
+    "write": {
+      "created_by": "{{user.email}}"
+    }
+  }
